@@ -12,9 +12,8 @@ tailwind.config = {
   },
 };
 
-// Плавная прокрутка к якорям
+// Плавная прокрутка
 document.addEventListener("DOMContentLoaded", function () {
-  // Добавляем плавную прокрутку для всех якорных ссылок
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -29,13 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Бургер-меню с улучшенной анимацией
+// Бургер-меню
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (menuToggle && mobileMenu) {
-    // Переключение меню
     menuToggle.addEventListener("click", function (e) {
       e.stopPropagation();
       const isOpen = mobileMenu.classList.contains("opacity-100");
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Закрытие меню при клике на ссылку
+    // Закрытие меню
     document.querySelectorAll("#mobile-menu a").forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.remove(
@@ -81,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Закрытие меню при клике вне его области
     document.addEventListener("click", (e) => {
       if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
         mobileMenu.classList.remove(
@@ -99,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Анимация появления при скролле
+// Анимация при скролле
 function initScrollAnimations() {
   const fadeSections = document.querySelectorAll(".fade-in-section");
 
@@ -122,7 +119,6 @@ function initScrollAnimations() {
   });
 }
 
-// Инициализация при загрузке страницы
 document.addEventListener("DOMContentLoaded", function () {
   initScrollAnimations();
 });
