@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Элкон-Бетон</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Иконки -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Иконки -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- Шапка сайта -->
+<header class="bg-gray-600 text-black fixed top-0 left-0 right-0 z-50 h-18 ">
+    <div class="mx-auto px-4 h-full">
+        <div class="flex items-center justify-between h-full">
+            <!-- Логотип и название -->
+            <div class="flex items-center">
+                <img src="img/logo.png" alt="Логотип Элкон-Бетон" class="h-12 w-24 pr-3">
+                <span class="text-white text-[24px] font-rubik font-black font-semibold text-base"
+                    id="#main">Элкон-Бетон</span>
+            </div>
+
+            <!-- Навигация для десктопа -->
+            <nav class="hidden lg:flex items-center space-x-12 uppercase">
+                <a href="index.html" class="text-white font-rubik hover:text-yellow-300 transition-colors">Главная</a>
+                <a href="#about" class="text-white font-rubik hover:text-yellow-300 transition-colors">О
+                    нас</a>
+                <a href="#price" class="text-white font-rubik hover:text-yellow-300 transition-colors">Цены</a>
+
+                <a href="#calc" class="text-white font-rubik  hover:text-yellow-300 transition-colors">Калькулятор</a>
+                <a href="#contact" class="text-white font-rubik hover:text-yellow-300 transition-colors">Контакты</a>
+            </nav>
+
+            <!-- Центральный блок для планшетов -->
+            <div
+                class="hidden md:flex lg:hidden items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+                <div class="text-yellow-300 text-xl font-rubik">
+                    <a href="tel:+73912150303" class="text-sm font-rubik transition-colors hover:text-yellow-500"
+                        title="Сделать звонок">
+                        +7 (391) 215-03-03
+                    </a>
+                </div>
+            </div>
+
+            <!-- Контакты для десктопа -->
+            <div class="hidden lg:block text-right">
+                <div class="text-yellow-300 text-sm font-rubik ">
+                    <a href="tel:+73912150303" class="font-rubik transition-colors hover:text-yellow-500"
+                        title="Сделать звонок">
+                        +7 (391) 215-03-03
+                    </a>
+                </div>
+                <div class="text-sm font-rubik">
+                    <a href="https://yandex.ru/maps/11309/krasnoyarsk-krai/house/ulitsa_listvenny_kvartal_12/bUsYfgRoS0EDQFtsfXx2dH1lYw==/?ll=92.839027%2C56.074773&z=18.07"
+                        target="_blank" class="text-white hover:text-yellow-300" title="Показать на карте">660015,
+                        г. Красноярск, <br> пос. Солонцы, ул. Лиственный
+                        квартал, д. 12.</a>
+                </div>
+            </div>
+
+            <!-- Бургер-меню для мобильных -->
+            <div class="lg:hidden flex items-center">
+                <span class="text-white font-semibold font-rubik mr-2">Меню</span>
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div id="mobile-menu"
+        class="lg:hidden fixed top-18 left-0 right-0 bg-gray-600 py-4 transform transition-all duration-500 ease-out opacity-0 -translate-y-4 pointer-events-none z-40">
+        <div class="container mx-auto px-4">
+            <!-- Навигация в мобильном меню -->
+            <nav class="flex flex-col space-y-4 items-center">
+                <a href="index.html"
+                    class="text-white text-xl font-rubik hover:text-yellow-300 transition-colors">Главная</a>
+                <a href="#about" class="text-white text-xl font-rubik hover:text-yellow-300 transition-colors">О нас</a>
+                <a href="#price" class="text-white text-xl font-rubik hover:text-yellow-300 transition-colors">Цены</a>
+                <a href="#calc"
+                    class="text-white text-xl font-rubik hover:text-yellow-300 transition-colors">Калькулятор</a>
+                <a href="#contact"
+                    class="text-white text-xl font-rubik hover:text-yellow-300 transition-colors">Контакты</a>
+            </nav>
+
+            <div class="text-center mt-6">
+                <hr class="my-3 border-gray-400">
+                <div class="text-yellow-300 text-sm font-rubik">
+                    <a href="https://yandex.ru/maps/11309/krasnoyarsk-krai/house/ulitsa_listvenny_kvartal_12/bUsYfgRoS0EDQFtsfXx2dH1lYw==/?ll=92.839027%2C56.074773&z=18.07"
+                        title="Показать на карте" target="_blank" class="text-yellow-300 hover:text-yellow-500">660015,
+                        г. Красноярск, пос. Солонцы, ул. Лиственный
+                        квартал, д. 12.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<body>
+
+    <!-- Основной контент -->
+    <main class="pt-20 fade-in-section">
+        <div class="bg-white md:p-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                    <!-- Текстовый блок -->
+                    <div class="w-full lg:w-1/2">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-tight">
+                            Бетонный завод <p class="mt-5 lg:text-end">"Элкон-Бетон"</p>
+                        </h1>
+
+                        <div class="bg-blue-50 p-1 md:p-8 rounded-lg font-rubik ">
+                            <p class="text-xl">
+                                Предприятие, которое снабжает строительные площадки Красноярска бетоном с <b>2012</b>
+                                года.
+                                Бетон с доставкой для фундамента, для стяжки пола, для перекрытия и изготовления любых
+                                архитектурных форм в любом количестве.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Изображение -->
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="img/image 2.png" alt="Concrete plant equipment"
+                            class="w-full h-auto object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <!-- Раздел "Наши преимущества" -->
+    <section class="py-16 bg-white pt-10 scroll-mt-10 fade-in-section" id="about">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black text-center mb-12">
+                Наши преимущества
+            </h2>
+
+            <!-- Карточки преимуществ -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Карточка 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Передняя сторона -->
+                        <div class="flip-card-front bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <div class="text-center">
+                                <span class="material-symbols-outlined text-4xl text-blue-600 mb-3">timelapse</span>
+                                <h3 class="text-xl font-rubik font-bold text-black">Работаем без выходных</h3>
+                            </div>
+                        </div>
+                        <!-- Задняя сторона -->
+                        <div class="flip-card-back bg-blue-50 text-dark p-6 rounded-lg border border-blue-700">
+                            <div class="text-center text-black">
+                                <h3 class="text-xl font-rubik font-bold mb-3">Работаем без выходных</h3>
+                                <p class="text-sm">Доступность 24/7 для ваших строительных проектов. Никаких задержек!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Передняя сторона -->
+                        <div class="flip-card-front bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <div class="text-center">
+                                <span class="material-symbols-outlined text-4xl text-blue-600 mb-3">recommend</span>
+                                <h3 class="text-xl font-rubik font-bold text-black">Производим высококачественный бетон
+                                </h3>
+                            </div>
+                        </div>
+                        <!-- Задняя сторона -->
+                        <div class="flip-card-back  bg-blue-50 p-6 rounded-lg border border-blue-700">
+                            <div class="text-center text-black">
+                                <h3 class="text-xl font-rubik font-bold mb-3">Высококачественный бетон</h3>
+                                <p class="text-sm">Современные технологии и строгий контроль качества на каждом этапе
+                                    производства</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="flip-card md:col-span-2 lg:col-span-1">
+                    <div class="flip-card-inner">
+                        <!-- Передняя сторона -->
+                        <div class="flip-card-front bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <div class="text-center">
+                                <span class="material-symbols-outlined text-4xl text-blue-600 mb-3">person</span>
+                                <h3 class="text-xl font-rubik font-bold text-black">Индивидуальный подход к клиентам
+                                </h3>
+                            </div>
+                        </div>
+                        <!-- Задняя сторона -->
+                        <div class="flip-card-back  bg-blue-50 p-6 rounded-lg border border-blue-700">
+                            <div class="text-center text-black">
+                                <h3 class="text-xl font-rubik font-bold mb-3">Индивидуальный подход</h3>
+                                <p class="text-sm">Персональные решения для каждого проекта и гибкие условия
+                                    сотрудничества
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- Раздел цены -->
+
+    <section class="bg-white pt-10 scroll-mt-10 fade-in-section" id="price">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black text-center">
+            Цены
+        </h2>
+        <p class="text-center font-bold pt-10">За наличный расчет (безналичный расчет - <span class="bg-yellow-300">с
+                НДС)</span>, 1 м3
+        </p>
+        <!-- Таблица цен -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 pt-10">
+            <!-- Таблица Бетон -->
+            <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
+                <table class="w-full text-left table-auto">
+                    <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
+                        <tr
+                            class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
+                            <td>МАРКА БЕТОНА</td>
+                            <td>КЛАСС БЕТОНА</td>
+                            <td>ЦЕНА</td>
+                            <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
+
+                        </tr>
+                    </thead>
+                    <tbody
+                        class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
+                        <tr>
+                            <td>М 100</td>
+                            <td>В7.5</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>М 150</td>
+                            <td>В10</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>М 200</td>
+                            <td>В15</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>М 250</td>
+                            <td>В20</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>М 300</td>
+                            <td>В22.5</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>М 350</td>
+                            <td>В25</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>М 400</td>
+                            <td>В30</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Таблица Раствор -->
+            <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
+                <table class="w-full text-left table-auto">
+                    <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
+                        <tr
+                            class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
+                            <td>РАСТВОР</td>
+                            <td>ЦЕНА</td>
+                            <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
+                            <td>ОПТОВАЯ ЦЕНА</td>
+                        </tr>
+                    </thead>
+                    <tbody
+                        class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
+                        <tr>
+                            <td>М 100</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+
+                            <td>договорная</td>
+                        </tr>
+                        <tr>
+                            <td>М 150</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>договорная</td>
+                        </tr>
+                        <tr>
+                            <td>М 200</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>договорная</td>
+                        </tr>
+                        <tr>
+                            <td>М 250</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>договорная</td>
+                        </tr>
+                        <tr>
+                            <td>М 300</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>договорная</td>
+                        </tr>
+                        <tr>
+                            <td>М 350</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>договорная</td>
+                        </tr>
+                        <tr>
+                            <td>М 400</td>
+                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>договорная</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+
+    <hr>
+
+    <!-- Раздел калькулятора -->
+    <section class="py-16 scroll-mt-10 fade-in-section" id="calc">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
+                Калькулятор
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Калькулятор объема -->
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-black text-center mb-6">Калькулятор объема бетона для плиты</h3>
+                    <div class="space-y-6 mb-6 md:mb-8">
+                        <!-- Длина -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Длина плиты</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="length" placeholder="0.00"
+                                    class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base">
+                                <select id="lengthUnit"
+                                    class="p-3 border border-gray-300 rounded-lg bg-white text-sm md:text-base w-35">
+                                    <option value="m">метры</option>
+                                    <option value="cm">сантиметры</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Ширина -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Ширина плиты</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="width" placeholder="0.00"
+                                    class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base">
+                                <select id="widthUnit"
+                                    class="p-3 border border-gray-300 rounded-lg bg-white text-sm md:text-base w-35">
+                                    <option value="m">метры</option>
+                                    <option value="cm">сантиметры</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Глубина -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Глубина плиты</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="depth" placeholder="0.00"
+                                    class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base">
+                                <select id="depthUnit"
+                                    class="p-3 border border-gray-300 rounded-lg bg-white text-sm md:text-base w-35">
+                                    <option value="m">метры</option>
+                                    <option value="cm">сантиметры</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Результат объема -->
+                    <div id="result" class="text-center p-4 bg-blue-50 rounded-lg hidden">
+                        <h3 class="text-lg md:text-xl font-bold text-blue-800">
+                            Объем плиты (V) = <span id="volumeResult">0</span> м³
+                        </h3>
+                    </div>
+                </div>
+                <!-- Калькулятор стоимости -->
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-black text-center mb-6">Расчет стоимости</h3>
+                    <div class="space-y-6 mb-6 md:mb-8">
+                        <!-- Выбор марки -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Материал</label>
+                            <select id="materialType"
+                                class="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm md:text-base mb-4">
+                                <option value="">Выберите тип материала</option>
+                                <option value="concrete">Бетон</option>
+                                <option value="mortar">Раствор</option>
+                            </select>
+
+                            <select id="materialGrade"
+                                class="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm md:text-base hidden">
+                                <option value="">Выберите марку</option>
+                            </select>
+                        </div>
+
+                        <!-- Объем -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Нужный объем (м³)</label>
+                            <input type="text" id="volumeInput" placeholder="0.00"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base">
+                        </div>
+                        <!-- Соглашение -->
+                        <div class="space-y-2">
+                            <label class="flex items-start space-x-3">
+                                <input type="checkbox" id="agreement"
+                                    class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                <span class="text-sm text-gray-700">
+                                    Вы соглашаетесь, что стоимость указана в ознакомительных целях и может отличаться от
+                                    фактической цены на момент
+                                    заказа.
+                                    <a href="#" class="text-blue-600 hover:text-blue-800 underline">Публичная оферта</a>
+                                </span>
+                            </label>
+                        </div>
+                        <!-- Кнопка расчета стоимости -->
+                        <button onclick="calculateCost()" id="calculateButton"
+                            class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors text-sm md:text-base disabled:bg-gray-400 disabled:cursor-not-allowed"
+                            disabled>
+                            Рассчитать стоимость
+                        </button>
+                    </div>
+                    <!-- Результат стоимости -->
+                    <div id="costResult" class="text-center p-4 bg-green-50 rounded-lg hidden">
+                        <h3 class="text-lg md:text-xl font-bold text-green-800 mb-3">
+                            Расчет примерной стоимости
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="text-green-700 text-lg">
+                                Без НДС: <span id="costWithoutVAT">0</span> руб.
+                            </div>
+                            <div class="text-green-700 text-lg">
+                                С НДС: <span id="costWithVAT">0</span> руб.
+                            </div>
+
+                        </div>
+                        <p class="text-sm text-green-600 mt-3 font-medium" id="priceDetails"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <hr>
+    <!-- Раздел Контакты -->
+    <section class="py-16 scroll-mt-10 fade-in-section" id="contact">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
+                Контакты
+            </h2>
+
+            <!-- Контактная информация -->
+            <div class="text-center mb-10">
+
+
+                <!-- Адрес -->
+                <div class="mb-6">
+                    <div class="flex justify-center items-center mb-2">
+                        <span class="material-symbols-outlined mr-2">location_on</span>
+                        <span class="text-xl font-rubik font-bold text-black">Адрес завода</span>
+                    </div>
+                    <a href="https://yandex.ru/maps/11309/krasnoyarsk-krai/house/ulitsa_listvenny_kvartal_12/bUsYfgRoS0EDQFtsfXx2dH1lYw==/?ll=92.839027%2C56.074773&z=18.07"
+                        title="Показать на карте" target="_blank"
+                        class="text-black font-rubik hover:text-yellow-700">660015,
+                        г. Красноярск, пос. Солонцы, ул. Лиственный
+                        квартал, д. 12.</a>
+                </div>
+
+                <!-- Почта -->
+                <div class="mb-6">
+                    <div class="flex justify-center items-center mb-2">
+                        <span class="material-symbols-outlined  mr-2">mail</span>
+                        <span class="text-xl font-rubik font-bold text-black">Email</span>
+                    </div>
+                    <a href="mailto:info@elkon-beton.ru" class="transition-colors hover:text-yellow-700 font-rubik"
+                        title="Написать на почту">
+                        info@elkon-beton.ru
+                    </a>
+                </div>
+
+                <!-- Время работы -->
+                <div class="font-rubik mb-6">
+                    <div class="flex justify-center items-center mb-2">
+                        <span class="material-symbols-outlined mr-2">schedule</span>
+                        <span class="font-bold text-black">Режим работы</span>
+                    </div>
+                    <p>
+                        Без выходных с <b class="text-gray-900">8.00</b> до <b class="text-gray-900">20.00</b>
+                    </p>
+                </div>
+                <!-- Телефон -->
+                <div class="font-rubik">
+                    <div class="flex justify-center items-center mb-2">
+                        <span class="material-symbols-outlined">
+                            phone_enabled
+                        </span>
+                        <span class="font-bold text-black">Телефон</span>
+                    </div>
+                    <a href="tel:+73912150303" class="font-rubik transition-colors hover:text-yellow-700"
+                        title="Сделать звонок">
+                        +7 (391) 215-03-03
+                    </a>
+                </div>
+            </div>
+
+            <!-- Карта -->
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <script type="text/javascript" charset="utf-8" async
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abec7471c58f4a2193949d663bd2167d770ad9f18168d320971ce810b43e9c3e9&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+
+        </div>
+    </section>
+    </div>
+    </section>
+
+
+    <script src="./script/script.js"></script>
+    <script src="./script/calculator.js"></script>
+</body>
+
+</html>
