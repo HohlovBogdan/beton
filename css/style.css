@@ -111,3 +111,6 @@
 a:hover {
   transition: all 0.5s ease-in-out;
 }
+.first-column-width{
+  width: 200px;
+}

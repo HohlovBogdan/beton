@@ -116,12 +116,13 @@
                 <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                     <!-- Текстовый блок -->
                     <div class="w-full lg:w-1/2">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-tight">
-                            Бетонный завод <p class="mt-5 lg:text-end">"Элкон-Бетон"</p>
+                        <h1
+                            class="text-4xl md:text-6xl lg:text-6xl font-black text-black mb-8 leading-tight sm:text-center text-gray-600">
+                            Бетонный завод <p class="mt-5 lg:text-end text-blue-400">"Элкон-Бетон"</p>
                         </h1>
 
                         <div class="bg-blue-50 p-1 md:p-8 rounded-lg font-rubik ">
-                            <p class="text-xl">
+                            <p class="sm:text-xl lg:text-base">
                                 Предприятие, которое снабжает строительные площадки Красноярска бетоном с <b>2012</b>
                                 года.
                                 Бетон с доставкой для фундамента, для стяжки пола, для перекрытия и изготовления любых
@@ -133,7 +134,7 @@
                     <!-- Изображение -->
                     <div class="w-full lg:w-1/2 flex justify-center">
                         <img src="img/image 2.png" alt="Concrete plant equipment"
-                            class="w-full h-auto object-cover rounded-lg">
+                            class="w-full h-auto object-cover rounded-lg sm:hidden lg:flex">
                     </div>
                 </div>
             </div>
@@ -153,16 +154,16 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Передняя сторона -->
-                        <div class="flip-card-front bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flip-card-front bg-white p-6 rounded-lg border border-gray-300">
                             <div class="text-center">
-                                <span class="material-symbols-outlined text-4xl text-blue-600 mb-3">timelapse</span>
+                                <span class="material-symbols-outlined text-4xl text-blue-400 mb-3">timelapse</span>
                                 <h3 class="text-xl font-rubik font-bold text-black">Работаем без выходных</h3>
                             </div>
                         </div>
                         <!-- Задняя сторона -->
-                        <div class="flip-card-back bg-blue-50 text-dark p-6 rounded-lg border border-blue-700">
+                        <div class="flip-card-back bg-blue-50 text-dark p-6 rounded-lg border border-blue-400">
                             <div class="text-center text-black">
-                                <h3 class="text-xl font-rubik font-bold mb-3">Работаем без выходных</h3>
+                                <h3 class="text-2xl font-rubik font-bold mb-3">Работаем без выходных</h3>
                                 <p class="text-sm">Доступность 24/7 для ваших строительных проектов. Никаких задержек!
                                 </p>
                             </div>
@@ -174,17 +175,17 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Передняя сторона -->
-                        <div class="flip-card-front bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flip-card-front bg-white p-6 rounded-lg border border-gray-300">
                             <div class="text-center">
-                                <span class="material-symbols-outlined text-4xl text-blue-600 mb-3">recommend</span>
+                                <span class="material-symbols-outlined text-4xl text-blue-400 mb-3">recommend</span>
                                 <h3 class="text-xl font-rubik font-bold text-black">Производим высококачественный бетон
                                 </h3>
                             </div>
                         </div>
                         <!-- Задняя сторона -->
-                        <div class="flip-card-back  bg-blue-50 p-6 rounded-lg border border-blue-700">
+                        <div class="flip-card-back  bg-blue-50 p-6 rounded-lg border border-blue-400">
                             <div class="text-center text-black">
-                                <h3 class="text-xl font-rubik font-bold mb-3">Высококачественный бетон</h3>
+                                <h3 class="text-2xl font-rubik font-bold mb-3">Высококачественный бетон</h3>
                                 <p class="text-sm">Современные технологии и строгий контроль качества на каждом этапе
                                     производства</p>
                             </div>
@@ -196,17 +197,17 @@
                 <div class="flip-card md:col-span-2 lg:col-span-1">
                     <div class="flip-card-inner">
                         <!-- Передняя сторона -->
-                        <div class="flip-card-front bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flip-card-front bg-white p-6 rounded-lg border border-gray-300">
                             <div class="text-center">
-                                <span class="material-symbols-outlined text-4xl text-blue-600 mb-3">person</span>
+                                <span class="material-symbols-outlined text-4xl text-blue-400 mb-3">person</span>
                                 <h3 class="text-xl font-rubik font-bold text-black">Индивидуальный подход к клиентам
                                 </h3>
                             </div>
                         </div>
                         <!-- Задняя сторона -->
-                        <div class="flip-card-back  bg-blue-50 p-6 rounded-lg border border-blue-700">
+                        <div class="flip-card-back  bg-blue-50 p-6 rounded-lg border border-blue-400">
                             <div class="text-center text-black">
-                                <h3 class="text-xl font-rubik font-bold mb-3">Индивидуальный подход</h3>
+                                <h3 class="text-2xl font-rubik font-bold mb-3">Индивидуальный подход</h3>
                                 <p class="text-sm">Персональные решения для каждого проекта и гибкие условия
                                     сотрудничества
                                 </p>
@@ -228,76 +229,54 @@
                 НДС)</span>, 1 м3
         </p>
         <!-- Таблица цен -->
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 pt-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-1 gap-20 pt-10">
             <!-- Таблица Бетон -->
             <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
                 <table class="w-full text-left table-auto">
                     <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
                         <tr
                             class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
-                            <td>МАРКА БЕТОНА</td>
-                            <td>КЛАСС БЕТОНА</td>
+                            <td class="first-column-width">МАРКА БЕТОНА</td>
                             <td>ЦЕНА</td>
                             <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
-
                         </tr>
                     </thead>
                     <tbody
                         class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
                         <tr>
                             <td>М 100</td>
-                            <td>В7.5</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                         <tr>
                             <td>М 150</td>
-                            <td>В10</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                         <tr>
                             <td>М 200</td>
-                            <td>В15</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                         <tr>
                             <td>М 250</td>
-                            <td>В20</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                         <tr>
                             <td>М 300</td>
-                            <td>В22.5</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                         <tr>
                             <td>М 350</td>
-                            <td>В25</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                         <tr>
                             <td>М 400</td>
-                            <td>В30</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                         </tr>
                     </tbody>
                 </table>
@@ -309,10 +288,9 @@
                     <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
                         <tr
                             class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
-                            <td>РАСТВОР</td>
+                            <td class="first-column-width">МАРКА РАСТВОРА</td>
                             <td>ЦЕНА</td>
                             <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
-                            <td>ОПТОВАЯ ЦЕНА</td>
                         </tr>
                     </thead>
                     <tbody
@@ -321,48 +299,76 @@
                             <td>М 100</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-
-                            <td>договорная</td>
                         </tr>
                         <tr>
                             <td>М 150</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>договорная</td>
                         </tr>
                         <tr>
                             <td>М 200</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>договорная</td>
                         </tr>
                         <tr>
                             <td>М 250</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>договорная</td>
                         </tr>
                         <tr>
                             <td>М 300</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>договорная</td>
                         </tr>
                         <tr>
                             <td>М 350</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>договорная</td>
                         </tr>
                         <tr>
                             <td>М 400</td>
                             <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
                             <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>договорная</td>
                         </tr>
                     </tbody>
+                </table>
+            </div>
 
+            <!-- Противоморозная добавка -->
+            <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
+
+                <table class="w-full">
+                    <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
+                        <tr
+                            class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
+                            <td>Температура (t)</td>
+                            <td>ЦЕНА</td>
+
+                        </tr>
+                    </thead>
+                    <tbody
+                        class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
+                        <tr>
+                            <td>-5</td>
+                            <td>200 (<span class="bg-yellow-300">300</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>-10</td>
+                            <td>300 (<span class="bg-yellow-300">350</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>-15</td>
+                            <td>400 (<span class="bg-yellow-300">500</span>)</td>
+
+                        </tr>
+                        <tr>
+                            <td>-20</td>
+                            <td>500 (<span class="bg-yellow-300">600</span>)</td>
+
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
