@@ -21,9 +21,13 @@
         <div class="flex items-center justify-between h-full">
             <!-- Логотип и название -->
             <div class="flex items-center">
-                <img src="img/logo.png" alt="Логотип Элкон-Бетон" class="h-12 w-24 pr-3">
-                <span class="text-white text-[24px] font-rubik font-black font-semibold text-base"
-                    id="#main">Элкон-Бетон</span>
+                <img src="img/logo.png" alt="Логотип Элкон-Бетон" class="h-12 w-24 pr-3 hidden md:flex">
+                <span class="text-white font-rubik hidden md:flex" id="#main">Элкон-Бетон</span>
+                <a href="tel:+73912150303"
+                    class="lg:hidden md:hidden text-yellow-300 font-rubik transition-colors hover:text-yellow-500 "
+                    title="Сделать звонок">
+                    +7 (391) 215-03-03
+                </a>
             </div>
 
             <!-- Навигация для десктопа -->
@@ -41,8 +45,7 @@
             <div
                 class="hidden md:flex lg:hidden items-center justify-center absolute left-1/2 transform -translate-x-1/2">
                 <div class="text-yellow-300 text-xl font-rubik">
-                    <a href="tel:+73912150303" class="text-sm font-rubik transition-colors hover:text-yellow-500"
-                        title="Сделать звонок">
+                    <a href="tel:+73912150303" class="transition-colors hover:text-yellow-500" title="Сделать звонок">
                         +7 (391) 215-03-03
                     </a>
                 </div>
@@ -66,7 +69,6 @@
 
             <!-- Бургер-меню для мобильных -->
             <div class="lg:hidden flex items-center">
-                <span class="text-white font-semibold font-rubik mr-2">Меню</span>
                 <button id="menu-toggle" class="text-white focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -117,12 +119,12 @@
                     <!-- Текстовый блок -->
                     <div class="w-full lg:w-1/2">
                         <h1
-                            class="text-4xl md:text-6xl lg:text-6xl font-black text-black mb-8 leading-tight sm:text-center text-gray-600">
+                            class="text-5xl md:text-6xl lg:text-6xl font-black text-black mb-8 leading-tight text-center lg:text-left text-gray-600">
                             Бетонный завод <p class="mt-5 lg:text-end text-blue-400">"Элкон-Бетон"</p>
                         </h1>
 
                         <div class="bg-blue-50 p-1 md:p-8 rounded-lg font-rubik ">
-                            <p class="sm:text-xl lg:text-base">
+                            <p class="text-base">
                                 Предприятие, которое снабжает строительные площадки Красноярска бетоном с <b>2012</b>
                                 года.
                                 Бетон с доставкой для фундамента, для стяжки пола, для перекрытия и изготовления любых
@@ -132,9 +134,9 @@
                     </div>
 
                     <!-- Изображение -->
-                    <div class="w-full lg:w-1/2 flex justify-center">
+                    <div class="hidden lg:block lg:w-1/2 lg:flex justify-center">
                         <img src="img/image 2.png" alt="Concrete plant equipment"
-                            class="w-full h-auto object-cover rounded-lg sm:hidden lg:flex">
+                            class="w-full h-auto object-cover rounded-lg">
                     </div>
                 </div>
             </div>
