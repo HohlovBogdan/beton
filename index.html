@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Элкон-Бетон</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Иконки -->
@@ -16,13 +17,13 @@
 </head>
 
 <!-- Шапка сайта -->
-<header class="bg-gray-600 text-black fixed top-0 left-0 right-0 z-50 h-18 ">
-    <div class="mx-auto px-4 h-full">
+<header class="bg-gray-600 text-black fixed top-0 left-0 right-0 z-50 h-18">
+    <div class="mx-auto px-4 h-full ">
         <div class="flex items-center justify-between h-full">
             <!-- Логотип и название -->
             <div class="flex items-center">
-                <img src="img/logo.png" alt="Логотип Элкон-Бетон" class="h-12 w-24 pr-3 hidden md:flex">
-                <span class="text-white font-rubik hidden md:flex" id="#main">Элкон-Бетон</span>
+                <img src="img/logo.png" alt="Логотип Элкон-Бетон" class="h-10 w-24 pr-3 hidden md:flex">
+                <span class="text-white font-rubik hidden md:flex">Элкон-Бетон</span>
                 <a href="tel:+73912150303"
                     class="lg:hidden md:hidden text-yellow-300 font-rubik transition-colors hover:text-yellow-500 "
                     title="Сделать звонок">
@@ -31,13 +32,15 @@
             </div>
 
             <!-- Навигация для десктопа -->
-            <nav class="hidden lg:flex items-center space-x-12 uppercase">
-                <a href="index.html" class="text-white font-rubik hover:text-yellow-300 transition-colors">Главная</a>
-                <a href="#about" class="text-white font-rubik hover:text-yellow-300 transition-colors">О
+            <nav class="hidden lg:flex items-center space-x-12 uppercase text-xs  fade-in-section">
+                <a href="index.html"
+                    class="nav-link text-white font-rubik hover:text-yellow-300 transition-colors ">Главная</a>
+                <a href="#about" class="nav-link text-white font-rubik hover:text-yellow-300 transition-colors">О
                     нас</a>
-                <a href="#price" class="text-white font-rubik hover:text-yellow-300 transition-colors">Цены</a>
+                <a href="#price" class="nav-link text-white font-rubik hover:text-yellow-300 transition-colors">Цены</a>
 
-                <a href="#calc" class="text-white font-rubik  hover:text-yellow-300 transition-colors">Калькулятор</a>
+                <a href="#calc"
+                    class="nav-link text-white font-rubik  hover:text-yellow-300 transition-colors">Калькулятор</a>
                 <a href="#contact" class="text-white font-rubik hover:text-yellow-300 transition-colors">Контакты</a>
             </nav>
 
@@ -228,69 +231,64 @@
             Цены
         </h2>
         <p class="text-center font-bold pt-10">За наличный расчет (безналичный расчет - <span class="bg-yellow-300">с
-                НДС)</span>, 1 м3
+                НДС</span>), 1 м3
         </p>
         <!-- Таблица цен -->
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-1 gap-20 pt-10">
-            <!-- Таблица Бетон -->
-            <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
-                <table class="w-full text-left table-auto">
-                    <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
-                        <tr
-                            class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
-                            <td class="first-column-width">МАРКА БЕТОНА</td>
-                            <td>ЦЕНА</td>
-                            <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
-                        </tr>
-                    </thead>
-                    <tbody
-                        class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
-                        <tr>
-                            <td>М 100</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>М 150</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>М 200</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>М 250</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>М 300</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>М 350</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>М 400</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 pt-10 px-4 sm:px-6 md:px-8">
 
             <!-- Таблица Раствор -->
             <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
-                <table class="w-full text-left table-auto">
+                <table class="w-full text-left table-auto table-fixed">
+                    <colgroup>
+                        <col class="w-1/3">
+                        <col class="w-1/3">
+                        <col class="w-1/3">
+                    </colgroup>
                     <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
                         <tr
                             class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
-                            <td class="first-column-width">МАРКА РАСТВОРА</td>
+                            <td>МАРКА РАСТВОРА</td>
+                            <td>ЦЕНА</td>
+                            <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
+                        </tr>
+                    </thead>
+                    <tbody
+                        class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
+                        <tr>
+                            <td>М 50</td>
+                            <td>3500 (<span class="bg-yellow-300">4200</span>)</td>
+                            <td>3500 (<span class="bg-yellow-300">4200</span>)</td>
+                        </tr>
+                        <tr>
+                            <td>М 75</td>
+                            <td>3800 (<span class="bg-yellow-300">4560</span>)</td>
+                            <td>3800 (<span class="bg-yellow-300">4560</span>)</td>
+                        </tr>
+                        <tr>
+                            <td>М 100</td>
+                            <td>4000 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>4000 (<span class="bg-yellow-300">4800</span>)</td>
+                        </tr>
+                        <tr>
+                            <td>М 150</td>
+                            <td>4300 (<span class="bg-yellow-300">5160</span>)</td>
+                            <td>4300 (<span class="bg-yellow-300">5160</span>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Таблица Бетон -->
+            <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
+                <table class="w-full text-left table-auto table-fixed">
+                    <colgroup>
+                        <col class="w-1/3">
+                        <col class="w-1/3">
+                        <col class="w-1/3">
+                    </colgroup>
+                    <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
+                        <tr
+                            class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
+                            <td>МАРКА БЕТОНА</td>
                             <td>ЦЕНА</td>
                             <td>ЦЕНА ПОД БЕТОНОНАСОС</td>
                         </tr>
@@ -299,85 +297,82 @@
                         class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
                         <tr>
                             <td>М 100</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>3800 (<span class="bg-yellow-300">4560</span>)</td>
+                            <td>3900 (<span class="bg-yellow-300">4560</span>)</td>
                         </tr>
                         <tr>
                             <td>М 150</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>4200 (<span class="bg-yellow-300">5040</span>)</td>
+                            <td>4300 (<span class="bg-yellow-300">5040</span>)</td>
                         </tr>
                         <tr>
                             <td>М 200</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>4600 (<span class="bg-yellow-300">5520</span>)</td>
+                            <td>4700 (<span class="bg-yellow-300">5520</span>)</td>
                         </tr>
                         <tr>
                             <td>М 250</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>5500 (<span class="bg-yellow-300">6600</span>)</td>
+                            <td>5500 (<span class="bg-yellow-300">6600</span>)</td>
                         </tr>
                         <tr>
                             <td>М 300</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>5800 (<span class="bg-yellow-300">6960</span>)</td>
+                            <td>5800 (<span class="bg-yellow-300">6960</span>)</td>
                         </tr>
                         <tr>
                             <td>М 350</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>6200 (<span class="bg-yellow-300">7440</span>)</td>
+                            <td>6200 (<span class="bg-yellow-300">7440</span>)</td>
                         </tr>
                         <tr>
                             <td>М 400</td>
-                            <td>3800 (<span class="bg-yellow-300">4600</span>)</td>
-                            <td>3900 (<span class="bg-yellow-300">4800</span>)</td>
+                            <td>7000 (<span class="bg-yellow-300">8400</span>)</td>
+                            <td>7000 (<span class="bg-yellow-300">8400</span>)</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
+
+
             <!-- Противоморозная добавка -->
             <div class="relative overflow-hidden shadow-md rounded-lg md:text-sm">
-
-                <table class="w-full">
+                <table class="w-full text-left table-auto table-fixed">
+                    <colgroup>
+                        <col class="w-1/2">
+                        <col class="w-1/2">
+                    </colgroup>
                     <thead class="uppercase bg-[#4b525e] text-[#b7b7b7]">
                         <tr
                             class="[&>td]:py-4 [&>td]:border [&>td]:border-gray-300 [&>td]:text-center [&>td]:font-rubik [&>td]:font-bold">
                             <td>Температура (t)</td>
                             <td>ЦЕНА</td>
-
                         </tr>
                     </thead>
                     <tbody
                         class="bg-white [&>tr>td]:py-4 [&>tr>td]:border border-gray-300 text-center [&>tr>td]:font-rubik text-black">
                         <tr>
                             <td>-5</td>
-                            <td>200 (<span class="bg-yellow-300">300</span>)</td>
-
+                            <td>200 (<span class="bg-yellow-300">240</span>)</td>
                         </tr>
                         <tr>
                             <td>-10</td>
-                            <td>300 (<span class="bg-yellow-300">350</span>)</td>
-
+                            <td>300 (<span class="bg-yellow-300">360</span>)</td>
                         </tr>
                         <tr>
                             <td>-15</td>
-                            <td>400 (<span class="bg-yellow-300">500</span>)</td>
-
+                            <td>400 (<span class="bg-yellow-300">480</span>)</td>
                         </tr>
                         <tr>
                             <td>-20</td>
                             <td>500 (<span class="bg-yellow-300">600</span>)</td>
-
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
-
-    </section>
-
 
     <hr>
 
@@ -437,12 +432,13 @@
                     </div>
 
                     <!-- Результат объема -->
-                    <div id="result" class="text-center p-4 bg-blue-50 rounded-lg hidden">
-                        <h3 class="text-lg md:text-xl font-bold text-blue-800">
+                    <div id="result" class="text-center p-4 bg-gray-600 rounded-lg hidden">
+                        <h3 class="text-lg md:text-xl font-bold text-white">
                             Объем плиты (V) = <span id="volumeResult">0</span> м³
                         </h3>
                     </div>
                 </div>
+
                 <!-- Калькулятор стоимости -->
                 <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
                     <h3 class="text-xl font-bold text-black text-center mb-6">Расчет стоимости</h3>
@@ -469,6 +465,20 @@
                             <input type="text" id="volumeInput" placeholder="0.00"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base">
                         </div>
+
+                        <!-- Противоморозная добавка -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Противоморозная добавка</label>
+                            <select id="frostAdditive"
+                                class="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm md:text-base">
+                                <option value="0" data-price="0" data-price-vat="0">Не выбрано</option>
+                                <option value="-5" data-price="200" data-price-vat="240">Температура -5°C</option>
+                                <option value="-10" data-price="300" data-price-vat="360">Температура -10°C</option>
+                                <option value="-15" data-price="400" data-price-vat="480">Температура -15°C</option>
+                                <option value="-20" data-price="500" data-price-vat="600">Температура -20°C</option>
+                            </select>
+                        </div>
+
                         <!-- Соглашение -->
                         <div class="space-y-2">
                             <label class="flex items-start space-x-3">
@@ -476,35 +486,27 @@
                                     class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
                                 <span class="text-sm text-gray-700">
                                     Вы соглашаетесь, что стоимость указана в ознакомительных целях и может отличаться от
-                                    фактической цены на момент
-                                    заказа.
+                                    фактической цены на момент заказа.
                                     <a href="#" class="text-blue-600 hover:text-blue-800 underline">Публичная оферта</a>
                                 </span>
                             </label>
                         </div>
+
                         <!-- Кнопка расчета стоимости -->
-                        <button onclick="calculateCost()" id="calculateButton"
-                            class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors text-sm md:text-base disabled:bg-gray-400 disabled:cursor-not-allowed"
-                            disabled>
-                            Рассчитать стоимость
-                        </button>
+
                     </div>
+
                     <!-- Результат стоимости -->
                     <div id="costResult" class="text-center p-4 bg-green-50 rounded-lg hidden">
-                        <h3 class="text-lg md:text-xl font-bold text-green-800 mb-3">
+                        <h3 class="text-lg md:text-xl font-bold mb-3">
                             Расчет примерной стоимости
                         </h3>
-                        <div class="space-y-2">
-                            <div class="text-green-700 text-lg">
-                                Без НДС: <span id="costWithoutVAT">0</span> руб.
-                            </div>
-                            <div class="text-green-700 text-lg">
-                                С НДС: <span id="costWithVAT">0</span> руб.
-                            </div>
-
+                        <div class="text-black" id="priceDetails">
+                            <!-- Здесь JS подставит значения -->
                         </div>
-                        <p class="text-sm text-green-600 mt-3 font-medium" id="priceDetails"></p>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -515,75 +517,74 @@
     <hr>
     <!-- Раздел Контакты -->
     <section class="py-16 scroll-mt-10 fade-in-section" id="contact">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-black text-center mb-8 md:mb-12">
                 Контакты
             </h2>
 
             <!-- Контактная информация -->
-            <div class="text-center mb-10">
-
+            <div class="text-center mb-10 flex flex-col items-center space-y-6">
 
                 <!-- Адрес -->
-                <div class="mb-6">
+                <div class="flex flex-col items-center">
                     <div class="flex justify-center items-center mb-2">
                         <span class="material-symbols-outlined mr-2">location_on</span>
                         <span class="text-xl font-rubik font-bold text-black">Адрес завода</span>
                     </div>
                     <a href="https://yandex.ru/maps/11309/krasnoyarsk-krai/house/ulitsa_listvenny_kvartal_12/bUsYfgRoS0EDQFtsfXx2dH1lYw==/?ll=92.839027%2C56.074773&z=18.07"
                         title="Показать на карте" target="_blank"
-                        class="text-black font-rubik hover:text-yellow-700">660015,
-                        г. Красноярск, пос. Солонцы, ул. Лиственный
-                        квартал, д. 12.</a>
+                        class="text-black font-rubik hover:text-yellow-700 text-center">
+                        660015, г. Красноярск, пос. Солонцы, ул. Лиственный квартал, д. 12.
+                    </a>
                 </div>
 
                 <!-- Почта -->
-                <div class="mb-6">
+                <div class="flex flex-col items-center">
                     <div class="flex justify-center items-center mb-2">
-                        <span class="material-symbols-outlined  mr-2">mail</span>
+                        <span class="material-symbols-outlined mr-2">mail</span>
                         <span class="text-xl font-rubik font-bold text-black">Email</span>
                     </div>
-                    <a href="mailto:info@elkon-beton.ru" class="transition-colors hover:text-yellow-700 font-rubik"
+                    <a href="mailto:info@elkon-beton.ru"
+                        class="transition-colors hover:text-yellow-700 font-rubik text-center"
                         title="Написать на почту">
                         info@elkon-beton.ru
                     </a>
                 </div>
 
                 <!-- Время работы -->
-                <div class="font-rubik mb-6">
+                <div class="flex flex-col items-center">
                     <div class="flex justify-center items-center mb-2">
                         <span class="material-symbols-outlined mr-2">schedule</span>
                         <span class="font-bold text-black">Режим работы</span>
                     </div>
-                    <p>
+                    <p class="text-center">
                         Без выходных с <b class="text-gray-900">8.00</b> до <b class="text-gray-900">20.00</b>
                     </p>
                 </div>
+
                 <!-- Телефон -->
-                <div class="font-rubik">
+                <div class="flex flex-col items-center">
                     <div class="flex justify-center items-center mb-2">
-                        <span class="material-symbols-outlined">
-                            phone_enabled
-                        </span>
+                        <span class="material-symbols-outlined">phone_enabled</span>
                         <span class="font-bold text-black">Телефон</span>
                     </div>
-                    <a href="tel:+73912150303" class="font-rubik transition-colors hover:text-yellow-700"
+                    <a href="tel:+73912150303" class="font-rubik transition-colors hover:text-yellow-700 text-center"
                         title="Сделать звонок">
                         +7 (391) 215-03-03
                     </a>
                 </div>
+
             </div>
 
             <!-- Карта -->
-            <div class="rounded-lg overflow-hidden shadow-lg">
+            <div class="rounded-lg overflow-hidden shadow-lg w-full max-w-4xl">
                 <script type="text/javascript" charset="utf-8" async
-                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abec7471c58f4a2193949d663bd2167d770ad9f18168d320971ce810b43e9c3e9&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abec7471c58f4a2193949d663bd2167d770ad9f18168d320971ce810b43e9c3e9&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true">
+                    </script>
             </div>
-
         </div>
     </section>
-    </div>
-    </section>
+
 
 
     <script src="./script/script.js"></script>

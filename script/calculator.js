@@ -1,221 +1,176 @@
-// Данные для бетона и раствора (исправлены цены с НДС)
-const materials = {
-  concrete: [
-    { grade: "М 100", price: 3800, priceWithVAT: 4560 },
-    { grade: "М 150", price: 4200, priceWithVAT: 5040 },
-    { grade: "М 200", price: 4600, priceWithVAT: 5520 },
-    { grade: "М 250", price: 5500, priceWithVAT: 6600 },
-    { grade: "М 300", price: 5800, priceWithVAT: 6960 },
-    { grade: "М 350", price: 6200, priceWithVAT: 7440 },
-    { grade: "М 400", price: 7000, priceWithVAT: 8400 },
-  ],
-  mortar: [
-    { grade: "М 50", price: 3500, priceWithVAT: 4200 },
-    { grade: "М 75", price: 3800, priceWithVAT: 4560 },
-    { grade: "М 100", price: 4000, priceWithVAT: 4800 },
-    { grade: "М 150", price: 4300, priceWithVAT: 5160 },
-  ],
-};
-
-// Функции для калькулятора объема
-function calculateVolume() {
-  const lengthInput = document.getElementById("length").value;
-  const widthInput = document.getElementById("width").value;
-  const depthInput = document.getElementById("depth").value;
-
-  const lengthUnit = document.getElementById("lengthUnit").value;
-  const widthUnit = document.getElementById("widthUnit").value;
-  const depthUnit = document.getElementById("depthUnit").value;
-
-  // Очищаем предыдущие ошибки
-  clearErrors();
-
-  function parseNumber(value) {
-    if (!value || value === "") return 0;
-    return parseFloat(value.replace(",", "."));
-  }
-
-  let length = parseNumber(lengthInput);
-  let width = parseNumber(widthInput);
-  let depth = parseNumber(depthInput);
-
-  let hasError = false;
-
-  // Проверяем поле "Длина"
-  if (lengthInput === "") {
-    showError("length", "Введите длину");
-    hasError = true;
-  } else if (isNaN(length)) {
-    showError("length", "Введите корректное число");
-    hasError = true;
-  } else if (length <= 0) {
-    showError("length", "Число должно быть больше 0");
-    hasError = true;
-  }
-
-  // Проверяем поле "Ширина"
-  if (widthInput === "") {
-    showError("width", "Введите ширину");
-    hasError = true;
-  } else if (isNaN(width)) {
-    showError("width", "Введите корректное число");
-    hasError = true;
-  } else if (width <= 0) {
-    showError("width", "Число должно быть больше 0");
-    hasError = true;
-  }
-
-  // Проверяем поле "Глубина"
-  if (depthInput === "") {
-    showError("depth", "Введите глубину");
-    hasError = true;
-  } else if (isNaN(depth)) {
-    showError("depth", "Введите корректное число");
-    hasError = true;
-  } else if (depth <= 0) {
-    showError("depth", "Число должно быть больше 0");
-    hasError = true;
-  }
-
-  // Если есть ошибки - скрываем результат и выходим
-  if (hasError) {
-    document.getElementById("result").classList.add("hidden");
-    return;
-  }
-
-  // Конвертируем все значения в метры
-  if (lengthUnit === "cm") length = length / 100;
-  if (widthUnit === "cm") width = width / 100;
-  if (depthUnit === "cm") depth = depth / 100;
-
-  // Рассчитываем объем в кубических метрах
-  const volume = length * width * depth;
-
-  // Округляем до 3 знаков после запятой
-  const roundedVolume = Math.round(volume * 1000) / 1000;
-
-  // Показываем результат
-  document.getElementById("volumeResult").textContent = roundedVolume;
-  document.getElementById("result").classList.remove("hidden");
-
-  // Автоподстановка объема в калькулятор стоимости
-  updateVolumeFromCalculator(roundedVolume);
-}
-
-// Функция для показа ошибки
-function showError(fieldId, message) {
-  const field = document.getElementById(fieldId);
-  const parent = field.parentElement.parentElement;
-
-  // Создаем или находим элемент для ошибки
-  let errorElement = parent.querySelector(".error-message");
-  if (!errorElement) {
-    errorElement = document.createElement("div");
-    errorElement.className = "error-message text-red-500 text-xs mt-1";
-    parent.appendChild(errorElement);
-  }
-
-  errorElement.textContent = message;
-  field.classList.add("border-red-500");
-}
-
-// Функция для очистки ошибок
-function clearErrors() {
-  document.querySelectorAll(".error-message").forEach((el) => el.remove());
-  document
-    .querySelectorAll(".border-red-500")
-    .forEach((el) => el.classList.remove("border-red-500"));
-}
-
-// Функции для калькулятора стоимости
-function calculateCost() {
+document.addEventListener("DOMContentLoaded", () => {
+  const materialTypeSelect = document.getElementById("materialType");
   const materialGradeSelect = document.getElementById("materialGrade");
-  const volumeInput = document.getElementById("volumeInput").value;
-  const selectedOption =
-    materialGradeSelect.options[materialGradeSelect.selectedIndex];
-
-  if (!selectedOption.value) {
-    alert("Пожалуйста, выберите марку материала");
-    return;
-  }
-
-  const volume = parseFloat(volumeInput.replace(",", "."));
-  if (isNaN(volume) || volume <= 0) {
-    alert("Пожалуйста, введите корректный объем");
-    return;
-  }
-
-  const price = parseInt(selectedOption.getAttribute("data-price"));
-  const priceWithVAT = parseInt(
-    selectedOption.getAttribute("data-price-with-vat")
-  );
-
-  // Расчет стоимости
-  const costWithoutVAT = price * volume;
-  const costWithVAT = priceWithVAT * volume;
-
-  // Обновляем результат
-  document.getElementById("costWithoutVAT").textContent =
-    costWithoutVAT.toLocaleString("ru-RU", { maximumFractionDigits: 2 });
-  document.getElementById("costWithVAT").textContent =
-    costWithVAT.toLocaleString("ru-RU", { maximumFractionDigits: 2 });
-  document.getElementById(
-    "priceDetails"
-  ).textContent = `Цена за м³: ${price} руб. (с НДС: ${priceWithVAT} руб.)`;
-  document.getElementById("costResult").classList.remove("hidden");
-}
-
-// Автоподстановка объема из первого калькулятора
-function updateVolumeFromCalculator(volume) {
-  document.getElementById("volumeInput").value = volume;
-}
-
-// Инициализация при загрузке страницы
-document.addEventListener("DOMContentLoaded", function () {
-  // Обработчики для калькулятора объема
-  const inputs = ["length", "width", "depth"];
-  const selects = ["lengthUnit", "widthUnit", "depthUnit"];
-
-  inputs.forEach((id) => {
-    document.getElementById(id).addEventListener("input", calculateVolume);
-  });
-
-  selects.forEach((id) => {
-    document.getElementById(id).addEventListener("change", calculateVolume);
-  });
-
-  // Обработчики для калькулятора стоимости
-  document
-    .getElementById("materialType")
-    .addEventListener("change", function () {
-      const materialGradeSelect = document.getElementById("materialGrade");
-      const selectedType = this.value;
-
-      if (selectedType) {
-        materialGradeSelect.innerHTML =
-          '<option value="">Выберите марку</option>';
-        materials[selectedType].forEach((material) => {
-          const option = document.createElement("option");
-          option.value = material.grade;
-          option.textContent = material.grade;
-          option.setAttribute("data-price", material.price);
-          option.setAttribute("data-price-with-vat", material.priceWithVAT);
-          materialGradeSelect.appendChild(option);
-        });
-        materialGradeSelect.classList.remove("hidden");
-      } else {
-        materialGradeSelect.classList.add("hidden");
-      }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
+  const volumeInput = document.getElementById("volumeInput");
+  const frostSelect = document.getElementById("frostAdditive");
   const agreementCheckbox = document.getElementById("agreement");
-  const calculateButton = document.getElementById("calculateButton");
 
-  if (agreementCheckbox && calculateButton) {
-    agreementCheckbox.addEventListener("change", function () {
-      calculateButton.disabled = !this.checked;
+  const costResult = document.getElementById("costResult");
+  const priceDetails = document.getElementById("priceDetails");
+  const volumeResultSpan = document.getElementById("volumeResult");
+
+  const lengthInput = document.getElementById("length");
+  const widthInput = document.getElementById("width");
+  const depthInput = document.getElementById("depth");
+  const lengthUnit = document.getElementById("lengthUnit");
+  const widthUnit = document.getElementById("widthUnit");
+  const depthUnit = document.getElementById("depthUnit");
+  const volumeResultBlock = document.getElementById("result");
+
+  const tables = { concrete: {}, mortar: {}, frost: {} };
+
+  // --- Загружаем таблицы ---
+  const concreteRows = document.querySelectorAll("#price div:nth-child(2) tbody tr");
+  concreteRows.forEach(row => {
+    const cells = row.querySelectorAll("td");
+    const grade = cells[0].textContent.trim();
+    const priceWithoutVAT = parseFloat(cells[1].textContent.match(/\d+/)[0]);
+    const priceWithVAT = priceWithoutVAT * 1.2;
+    const priceUnderPump = parseFloat(cells[2].textContent.match(/\d+/)[0]);
+    const priceUnderPumpWithVAT = priceUnderPump * 1.2;
+
+    tables.concrete[grade] = {
+      price: priceWithoutVAT,
+      priceVAT: priceWithVAT,
+      priceUnderPump: priceUnderPump,
+      priceUnderPumpVAT: priceUnderPumpWithVAT
+    };
+  });
+
+  const mortarRows = document.querySelectorAll("#price div:nth-child(1) tbody tr");
+  mortarRows.forEach(row => {
+    const cells = row.querySelectorAll("td");
+    const grade = cells[0].textContent.trim();
+    const priceWithoutVAT = parseFloat(cells[1].textContent.match(/\d+/)[0]);
+    const priceWithVAT = priceWithoutVAT * 1.2;
+    const priceUnderPump = parseFloat(cells[2].textContent.match(/\d+/)[0]);
+    const priceUnderPumpWithVAT = priceUnderPump * 1.2;
+
+    tables.mortar[grade] = {
+      price: priceWithoutVAT,
+      priceVAT: priceWithVAT,
+      priceUnderPump: priceUnderPump,
+      priceUnderPumpVAT: priceUnderPumpWithVAT
+    };
+  });
+
+  const frostRows = document.querySelectorAll("#price div:nth-child(3) tbody tr");
+  frostRows.forEach(row => {
+    const cells = row.querySelectorAll("td");
+    const temp = cells[0].textContent.trim();
+    const price = parseFloat(cells[1].textContent.match(/\d+/)[0]);
+    const priceVAT = price * 1.2;
+
+    tables.frost[temp] = { price, priceVAT };
+  });
+
+  function updateMaterialGrades() {
+    materialGradeSelect.innerHTML = '<option value="">Выберите марку</option>';
+    const type = materialTypeSelect.value;
+    if (!type) {
+      materialGradeSelect.classList.add("hidden");
+      return;
+    }
+    Object.keys(tables[type]).forEach(g => {
+      const option = document.createElement("option");
+      option.value = g;
+      option.textContent = g;
+      materialGradeSelect.appendChild(option);
     });
+    materialGradeSelect.classList.remove("hidden");
   }
+
+  materialTypeSelect.addEventListener("change", () => {
+    updateMaterialGrades();
+    if (agreementCheckbox.checked) calculateCost();
+  });
+  materialGradeSelect.addEventListener("change", () => { if (agreementCheckbox.checked) calculateCost(); });
+  frostSelect.addEventListener("change", () => { if (agreementCheckbox.checked) calculateCost(); });
+
+  // --- Расчет объема плиты ---
+  function calculateVolume() {
+    let length = parseFloat(lengthInput.value);
+    let width = parseFloat(widthInput.value);
+    let depth = parseFloat(depthInput.value);
+
+    if (isNaN(length) || isNaN(width) || isNaN(depth)) {
+      volumeResultBlock.classList.add("hidden");
+      return;
+    }
+
+    if (lengthUnit.value === "cm") length /= 100;
+    if (widthUnit.value === "cm") width /= 100;
+    if (depthUnit.value === "cm") depth /= 100;
+
+    let volume = length * width * depth;
+    volumeResultSpan.textContent = volume.toFixed(2);
+    volumeResultBlock.classList.remove("hidden");
+
+    // Перенос в поле расчета стоимости
+    volumeInput.value = volume.toFixed(2);
+
+    if (agreementCheckbox.checked) calculateCost();
+  }
+
+  [lengthInput, widthInput, depthInput, lengthUnit, widthUnit, depthUnit].forEach(el => {
+    el.addEventListener("input", calculateVolume);
+    el.addEventListener("change", calculateVolume);
+  });
+
+  function formatNumber(num) { return Math.round(num).toLocaleString('ru-RU'); }
+
+  // --- Расчёт стоимости ---
+  function calculateCost() {
+    const type = materialTypeSelect.value;
+    const grade = materialGradeSelect.value;
+    const frostTemp = frostSelect.value;
+
+    // Берем объем из поля ввода даже если пользователь не использовал калькулятор объема
+    let volume = parseFloat(volumeInput.value);
+    if (isNaN(volume)) volume = 0;
+
+    if (!type || !grade) {
+      costResult.classList.add("hidden");
+      return;
+    }
+
+    if (volume < 0.1) {
+      alert("Минимальный объем поставки — 0.1 м³.");
+      return;
+    }
+
+    const pricePerM3 = tables[type][grade].price;
+    const pricePerM3VAT = tables[type][grade].priceVAT;
+    const priceUnderPump = tables[type][grade].priceUnderPump;
+    const priceUnderPumpVAT = tables[type][grade].priceUnderPumpVAT;
+
+    let frostPrice = 0;
+    let frostPriceVAT = 0;
+    if (frostTemp && frostTemp !== "0") {
+      frostPrice = tables.frost[frostTemp].price;
+      frostPriceVAT = tables.frost[frostTemp].priceVAT;
+    }
+
+    const total = (pricePerM3 + frostPrice) * volume;
+    const totalVAT = (pricePerM3VAT + frostPriceVAT) * volume;
+    const totalUnderPump = (priceUnderPump + frostPrice) * volume;
+    const totalUnderPumpVAT = (priceUnderPumpVAT + frostPriceVAT) * volume;
+
+    costResult.classList.remove("hidden");
+    priceDetails.innerHTML = `
+      Цена - ${formatNumber(total)} (<span class="bg-yellow-300">${formatNumber(totalVAT)}</span>)<br>
+      Цена под Бетононасос - ${formatNumber(totalUnderPump)} (<span class="bg-yellow-300">${formatNumber(totalUnderPumpVAT)}</span>)<br>
+      Объем: ${volume.toFixed(2)} м³
+    `;
+  }
+
+  agreementCheckbox.addEventListener("change", () => {
+    if (agreementCheckbox.checked) calculateCost();
+    else costResult.classList.add("hidden");
+  });
+
+  // --- Обновляем расчет при изменении объема вручную ---
+  volumeInput.addEventListener("input", () => {
+    if (agreementCheckbox.checked) calculateCost();
+  });
 });
